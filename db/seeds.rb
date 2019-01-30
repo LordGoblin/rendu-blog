@@ -2,10 +2,19 @@
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
 # Examples:
+
+
+#rakq db:reset db migrate
+
+
+
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
+
 10.times do
-  user = User.create!(first_name: Faker::DragonBall.character, last_name:Faker::DragonBall.character, email: Faker::Internet.email)
+
+  article = Article.create!(user_id: rand(1..10), title: Faker::LordOfTheRings.character, content: Faker::LordOfTheRings.location, categorie_id: rand(1..5))
+
 end
